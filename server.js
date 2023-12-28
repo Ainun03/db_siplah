@@ -15,11 +15,14 @@ const app = express()
 // app.use(express.json());
 // app.use(cors());
 app.use(cors({
-    origin:'*'
+    origin:'*',
+    methods:["POST","GET"],
+    credentials:true
 }));
 
 const mongoose = require('mongoose')
-mongoose.connect("mongodb://localhost:27017/crud")
+// mongoose.connect("mongodb://localhost:27017/crud")
+mongoose.connect("mongodb+srv://ainunrofiq7:@Inunganteng036@cluster0.9bsi7nx.mongodb.net/?retryWrites=true&w=majority");
 
 const register_route=require('./routes/registerRoute')
 app.use('/api',register_route)
@@ -29,7 +32,6 @@ app.use('/api',login_route)
 
 const testing_route=require('./routes/testingRoute')
 app.use('/api',testing_route)
-
 
 // app.get('/getUsers',(req,res)=>{
 //     return res.json("from Backend Side");
