@@ -22,7 +22,7 @@ app.use(cors({
 
 const mongoose = require('mongoose')
 // mongoose.connect("mongodb://localhost:27017/crud")
-mongoose.connect("mongodb+srv://ainunrofiq7:@Inunganteng036@cluster0.9bsi7nx.mongodb.net/?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://ainunrofiq7:WnVhuCa5Q10nAMHc@cluster0.9bsi7nx.mongodb.net/?retryWrites=true&w=majority");
 
 const register_route=require('./routes/registerRoute')
 app.use('/api',register_route)
