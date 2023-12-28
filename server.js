@@ -12,17 +12,21 @@ const postController = require('./controllers/productController')
 const RegisterModel=require('./models/authModel')
 
 const app = express()
+
+const connectDB = require("./connectMongo");
+
+connectDB();
 // app.use(express.json());
 // app.use(cors());
 app.use(cors({
-    origin:'*',
-    methods:["POST","GET"],
-    credentials:true
+    origin:'*'
+    // methods:["POST","GET"],
+    // credentials:true
 }));
 
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 // mongoose.connect("mongodb://localhost:27017/crud")
-mongoose.connect("mongodb+srv://ainunrofiq7:WnVhuCa5Q10nAMHc@cluster0.9bsi7nx.mongodb.net/?retryWrites=true&w=majority");
+// mongoose.connect("mongodb+srv://ainunrofiq7:WnVhuCa5Q10nAMHc@cluster0.9bsi7nx.mongodb.net/?retryWrites=true&w=majority");
 
 const register_route=require('./routes/registerRoute')
 app.use('/api',register_route)
@@ -134,6 +138,8 @@ app.get('/product',(req,res)=>{
 //     })
 // })
 
-app.listen(8081,()=>{
-    console.log("listening");
+const PORT = process.env.PORT;
+
+app.listen(PORT,()=>{
+    console.log("listening"+ PORT);
 })
