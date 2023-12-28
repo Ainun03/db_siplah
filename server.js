@@ -62,6 +62,9 @@ app.use('/api',post_route)
 //     .then(users => res.json(users))
 //     .catch(err => res.json(err))
 // })
+app.get('/',(req,res)=>{
+   res.json("Hello")
+})
 app.get('/product',(req,res)=>{
     ProductModel.find()
     .then(product => res.json(product))
