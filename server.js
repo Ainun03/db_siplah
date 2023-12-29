@@ -27,6 +27,12 @@ app.use(cors({
 // const mongoose = require('mongoose')
 // mongoose.connect("mongodb://localhost:27017/crud")
 // mongoose.connect("mongodb+srv://ainunrofiq7:WnVhuCa5Q10nAMHc@cluster0.9bsi7nx.mongodb.net/?retryWrites=true&w=majority");
+// mongoose.connect("mongodb://ainunrofiq7:WnVhuCa5Q10nAMHc@cluster0-shard-00-00.9bsi7nx.mongodb.net:27017,cluster0-shard-00-01.9bsi7nx.mongodb.net:27017,cluster0-shard-00-02.9bsi7nx.mongodb.net:27017/cluster0?ssl=true&replicaSet=atlas-shard-0&authSource=admin&retryWrites=true&w=majority",
+// {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+
+// });
 
 const register_route=require('./routes/registerRoute')
 app.use('/api',register_route)
