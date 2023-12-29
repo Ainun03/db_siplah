@@ -12,7 +12,7 @@ const postController = require('./controllers/productController')
 const RegisterModel=require('./models/authModel')
 
 const app = express()
-
+require("dotenv").config();
 const connectDB = require("./connectMongo");
 
 connectDB();
